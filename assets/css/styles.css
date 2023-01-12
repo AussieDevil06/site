@@ -1,6 +1,222 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
+/*See more fonts at https://fonts.google.com/*/
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Raleway:wght@100;300;400;700&display=swap");
+
+/*
+    Below I have defined some "CSS Variables" in the root element.
+    Variables declared in the root element are accessible by any other element in the document by using the var() method, 
+    for example "background-color: var(--brand);" would set the background color to green.
+    The benefit of this is that we can easily use the same colours throughout the entire site, which helps us create a consistent theme.
+    Also, if we wanted to change the main branding colour (currently green), we can simply update the "--brand" variable in the root element
+    and then everywhere that's using this variable will also be changed.
+    For example setting "--brand: orange" will change the active menu link in the navbar to orange, as well as the menu and social icon links in the footer.
+*/
+:root {
+    --brand: #04AA6D;
+    --highlight: crimson;
+    --dark: #333;
+    --medium: #646464;
+    --light: #ddd;
+    --lightest: #eee;
+    /*We can also reference one variable from another variable*/
+    --text-light: var(--light);
+    --text-dark: var(--dark);
+    /*Use the imported google font*/
+    --fancy-font: "Kaushan Script";
+}
+
+
+
 body{
-    font-family: sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
     margin: 0;
-    background-color: blue;
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+
+/* Fancy heading using an imported google font */
+.heading-fancy {
+    text-align: center;
+    font-size: 62px;
+    margin: -10px;
+    color: var(--highlight);
+    text-shadow: 2px 2px 5px var(--lightest);
+    font-family: var(--fancy-font);
+    transform: rotate(357deg);
+    translate: 0 20px;
+}
+
+
+/* Navbar */
+.top-nav {
+    overflow: hidden;
+    background-color: var(--dark);
+    padding-inline: 3rem;
+}
+
+.top-nav a {
+    float: left;
+    display: block;
+    color: var(--light);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.top-nav a:hover {
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+.top-nav a.active {
+    background-color: var(--brand);
+    color: var(--lightest);
+}
+
+.top-nav .icon {
+    display: none;
+}
+
+/*
+    Media queries allow us to set different style values depending on screen size
+    The following allows us to make the top menu bar (navbar) responsive and change on mobile devices
+*/
+@media screen and (max-width: 600px) {
+    .top-nav {
+        padding-inline: 0;
+    }
+    .top-nav a:not(:first-child) {
+        display: none;
+    }
+
+    .top-nav a.icon {
+        float: right;
+        display: block;
+    }
+    .top-nav.responsive {
+        position: relative;
+    }
+
+    .top-nav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .top-nav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
+
+
+/*Footer*/
+footer {
+    background-color: var(--dark);
+    min-height: 200px;
+    color: var(--text-light);
+    padding-block: 10px;
+    position: relative;
+    bottom: 0;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    max-height: inherit;
+    flex-wrap: wrap;
+}
+
+#footer-logo {
+    max-height: 150px;
+    max-width: 150px;
+    width: auto;
+    height: auto;
+    margin: 10px;
+    border-radius: 100%;
+    border-color: var(--light);
+    border: 2px solid var(--medium);
+    /*This is what should happen when the user hovers over this item*/
+    /*The ".4s" means that the transition should take 0.4 seconds to complete*/
+    transition: ease-in-out .4s;
+}
+/*When the user hovers over the logo, the logo will grow by 5% (to 105%)*/
+/*This grow & shrink effect will take 0.4 seconds as we have declared above in "transition"*/
+#footer-logo:hover {
+    transform: scale(1.05);
+}
+#footer-menu,
+#contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#footer-menu>a,
+#contact-info>a,
+#social-icons>a {
+    color: var(--text-light);
+    text-decoration: none;
+}
+#footer-menu>a:hover,
+#contact-info>a:hover,
+#social-icons>a:hover {
+    color: var(--brand);
+}
+#social-icons {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: x-large;
+    width: 100%;
+    margin-block: 20px;
+}
+#copyright-notice {
+    text-align: center;
+    font-size: smaller;
+    padding-block: 10px;
+    border-top: solid 1px var(--medium);
+}
+
+/*
+    Change the layout of the footer section for mobile devices.
+    We force the containers for the logo, menu, and contact info to 
+        1.  Take up 100% of the device width
+        2.  Wrap to the next line
+        3.  Add in some extra margins to space things nicely 
+*/
+@media (max-width: 600px) {
+    .footer-content>* {
+        width: 100%;
+        text-align: center;
+    }
+    #footer-menu {
+        margin-block: 25px;
+        gap: 25px;
+    }
+    #contact-info {
+        margin-block: 25px;
+    }
+}
+
+
+/*Image gallery*/
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 10px;
+    gap: 10px;
+}
+.image-gallery>img {
+    width: 100%;
+}
+@media (max-width: 600px) {
+    .heading-fancy {
+        font-size: 2.5rem;
+    }
+    .image-gallery {
+        grid-template-columns: 1fr;
+    }
 }
