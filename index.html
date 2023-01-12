@@ -5,11 +5,90 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/styles.css">
-    <title>Document</title>
+    <title>Home</title>
 </head>
 <body>
-    
+    <!--Top menu navbar-->
+    <nav class="top-nav" id="navbar">
 
+        <!--Menu links-->
+        <a href="./" class="active">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./beats.html">Beats</a>
+        <a href="./contact.html">Contact</a>
+
+        <!--Menu toggle button (shown on mobile view)-->
+        <a href="javascript:void(0);" class="icon" onclick="toggleNavbar()">
+            <i class="fa fa-bars"></i>
+        </a>
+
+    </nav>
+    
+    
+    <!--Content container-->
+    <div class="content">
+
+        <!--Your web page content will go here-->
+        <div>
+
+            <h1 class="heading-fancy">AI Generated Art</h1>
+            <div class="image-gallery">
+                <img src="./assets/images/angry_duck_dj_manga_glasses.png" alt="">
+                <img src="./assets/images/cool_panda_dj.png" alt="">
+                <img src="./assets/images/cool_panda_dj_2.png" alt="">
+                <img src="./assets/images/dj_lion.png" alt="">
+                <img src="./assets/images/dj_lion_2.png" alt="">
+                <img src="./assets/images/dj_tech.png" alt="">
+                <img src="./assets/images/donald_duck_angry_dj.png" alt="">
+                <img src="./assets/images/dune_dj_on_tomorrowland_mainstage.png" alt="">
+                <img src="./assets/images/marshmello_dj_party.png" alt="">
+                <img src="./assets/images/moon_knight_assassins_creed_style_in_the_desert.png" alt="">
+                <img src="./assets/images/steampunk_koala_dj.png" alt="">
+                <img src="./assets/images/steampunk_koala_dj_2.png" alt="">
+                <img src="./assets/images/techno_music_dj_underground.png" alt="">
+                <img src="./assets/images/techno_music_dj_underground_2.png" alt="">
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!--Site footer-->
+    <footer>
+
+        <div class="footer-content">
+
+            <!--The logo image-->
+            <a href="./" title="Home">
+                <img id="footer-logo" src="./assets/images/logo.png" alt="Logo of steampunk koala dj">
+            </a>
+
+            <!--Another menu at the bottom of each page-->
+            <nav id="footer-menu">
+                <a href="./"><i class="fa fa-home"></i>&nbsp;Home</a>
+                <a href="./about.html"><i class="fa fa-info-circle"></i>&nbsp;About</a>
+                <a href="./beats.html"><i class="fa fa-headphones"></i>&nbsp;Beats</a>
+                <a href="./contact.html"><i class="fa-solid fa-comment-dots"></i>&nbsp;Contact</a>
+            </nav>
+
+            <!--Ways to get in touch-->
+            <div id="contact-info">
+                <a href="mailto:leightonsnow240@gmail.com"><i class="fa fa-envelope"></i>&nbsp;leightonsnow240@gmail.com</a>
+                <div id="social-icons">
+                    <a href="https://www.facebook.com/leighton.snow.7" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/leighton.snow/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://twitter.com/Snowy_13_11" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+                
+            </div>
+        </div>
+
+        <div id="copyright-notice">
+            <script>document.write(`Copyright &copy; ${new Date().getFullYear()} - Leighton Snow - All Rights Reserved`)</script>
+        </div>
+
+    </footer>
 
     <script src="./assets/js/scripts.js"></script>
 </body>
